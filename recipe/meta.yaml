@@ -1,4 +1,4 @@
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: procps-ng
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://gitlab.com/procps-ng/procps/-/archive/v{{ version }}/procps-v{{ version }}.tar.gz
-  sha256: dea39e0e7b1367e28c887d736d1a9783df617497538603cdff432811a1016945
+  sha256: 1eaff353306aba12816d14881f2b88c7c9d06023825f7224700f0c01f66c65cd
 
 build:
   number: 0
