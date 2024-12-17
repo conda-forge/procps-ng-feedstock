@@ -27,6 +27,7 @@ outputs:
         - gettext
         - libtool
         - make
+        - gettext
         - xz
       host:
         - ncurses
