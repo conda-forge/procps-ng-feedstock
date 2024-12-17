@@ -10,26 +10,57 @@ source:
 
 build:
   number: 0
-  skip: true  # [not linux]
 
-requirements:
-  build:
-    - {{ compiler('c') }}
-    - autoconf
-    - automake
-    - libtool
-    - make
-    - pkg-config
-  host:
-    - ncurses
-  run:
-    - ncurses
+outputs:
+  - name: watch
+    build:
+      skip: true  # [win]
+    script: build-watch.sh
 
-test:
-  commands:
-    - $PREFIX/bin/ps
-    - $PREFIX/bin/w
-    - $PREFIX/bin/free
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ stdlib('c') }}
+        - pkg-config
+        - autoconf
+        - automake
+        - gettext
+        - libtool
+        - make
+        - xz
+      host:
+        - ncurses
+      run:
+        - ncurses
+      run_constraints:
+        - procps-ng <0.0.0a0
+    test:
+      commands:
+        - watch --version
+
+  - name: procps-ng
+    build:
+      skip: true  # [not linux]
+    script: build-all.sh
+
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - autoconf
+        - automake
+        - libtool
+        - make
+        - pkg-config
+      host:
+        - ncurses
+      run:
+        - ncurses
+
+    test:
+      commands:
+        - $PREFIX/bin/ps
+        - $PREFIX/bin/w
+        - $PREFIX/bin/free
 
 about:
   home: https://gitlab.com/procps-ng/procps
