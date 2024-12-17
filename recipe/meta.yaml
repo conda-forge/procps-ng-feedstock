@@ -27,7 +27,6 @@ outputs:
         - gettext
         - libtool
         - make
-        - gettext
         - xz-gpl-tools
       host:
         - ncurses
@@ -47,11 +46,13 @@ outputs:
     requirements:
       build:
         - {{ compiler('c') }}
+        - {{ stdlib('c') }}
         - autoconf
         - automake
         - libtool
         - make
         - pkg-config
+        - gettext
       host:
         - ncurses
       run:
