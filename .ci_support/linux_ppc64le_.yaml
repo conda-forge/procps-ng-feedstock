@@ -18,5 +18,3 @@ ncurses:
 - '6'
 target_platform:
 - linux-ppc64le
-xz:
-- '5'

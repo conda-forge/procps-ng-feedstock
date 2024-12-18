@@ -20,5 +20,3 @@ ncurses:
 - '6'
 target_platform:
 - osx-arm64
-xz:
-- '5'
