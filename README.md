@@ -199,4 +199,5 @@ Feedstock Maintainers
 =====================
 
 * [@dpryan79](https://github.com/dpryan79/)
+* [@pavelzw](https://github.com/pavelzw/)
 
