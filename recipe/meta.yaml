@@ -9,7 +9,7 @@ source:
   sha256: 1bbe8ff21dcd05a6adcda99a67d2e99cbd515c9e3a78fd3cc915b12aeb330d40
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - name: watch
@@ -21,7 +21,7 @@ outputs:
       build:
         - {{ compiler('c') }}
         - {{ stdlib('c') }}
-        - pkg-config
+        - pkgconf
         - autoconf
         - automake
         - gettext
@@ -51,7 +51,7 @@ outputs:
         - automake
         - libtool
         - make
-        - pkg-config
+        - pkgconf
         - gettext
       host:
         - ncurses
